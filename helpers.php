@@ -200,13 +200,15 @@ function array_group(array $array, $key)
             continue;
         }
 
+        $store = $array[$i][$key];
+
         // Does the group exist already?
-        if (!isset($index[$key])) {
+        if (!isset($index[$store])) {
             // No, so create it
-            $index[$key] = array();
+            $index[$store] = array();
         }
 
-        $index[$key][] = $array[$i];
+        $index[$store][] = $array[$i];
     }
 
     return $index;
